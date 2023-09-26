@@ -12,8 +12,11 @@ To view the template and materials for a C2, switch to the
 [c2Template](https://github.com/flamingchickens1540/RobotSoftwareTraining/tree/c2Template) 
 branch.
 
-#### Some useful downloads and links:
+#### Important Downloads:
  - [WPIlib installation](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html)
+ - [Git installation](https://git-scm.com/downloads)
+
+#### References
  - [WPIlib documentation](https://docs.wpilib.org/en/stable/index.html#) (very helpful)
  - [3rd party vendordeps](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-libraries.html)
- - [Git installation](https://git-scm.com/downloads)
+ 
