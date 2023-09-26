@@ -9,7 +9,7 @@ To view the template and materials for a C1, switch to the
 branch.
 
 To view the template and materials for a C2, switch to the 
-[c2Template](https://github.com/flamingchickens1540/RobotSoftwareTraining/tree/c12emplate) 
+[c2Template](https://github.com/flamingchickens1540/RobotSoftwareTraining/tree/c2Template) 
 branch.
 
 #### Some useful downloads and links:
