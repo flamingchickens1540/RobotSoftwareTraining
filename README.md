@@ -2,7 +2,7 @@
 Training materials for new robot software members.
 
 If you don't know how to program in Java, or haven't installed WPIlib and reviewed its
-documentation, talk to a manager before getting started.
+documentation, talk to a manager before getting started with these materials.
 
 To view the template and materials for a C1, switch to the 
 [c1Template](https://github.com/flamingchickens1540/RobotSoftwareTraining/tree/c1Template) 
