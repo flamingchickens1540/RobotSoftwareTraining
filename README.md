@@ -44,7 +44,7 @@ Now that you have installed Git, you can now set up your workspace for robot
 software. First, open your file browser ("File explorer" on Windows, "Finder" on
 MacOS) and create a new folder called something like "`RobotCode`" in a place that 
 you'll be able to get to later (your `Documents` folder is a great place!). Make 
-sure that this <u>isn't</u> your `Downloads` folder, since you may accidentally 
+sure that this isn't your `Downloads` folder, since you may accidentally 
 delete all your work when you clean your disk!
 
 ### Getting started
@@ -74,16 +74,25 @@ have to change your Git branch to the branch with the relavant template.
 
 To do this, you will first have to type the command `cd RobotSoftwareTraining`
 in order to have all your future commands be run in your project folder. Then,
-type `git checkout c1Template` to checkout the branch with the template code for
-a Robot SW 1 certification. Change "`c1Template`" to "`c2Template`" if you are
-working on a Robot SW 2.
+type `git checkout c1Template` to switch to the branch with the template code for
+a Robot SW 1 certification.
+
+#### Creating your personal working branch
+Of course, you don't want to be working directly on the template code, because
+other people will want to still have a blank template! Thus, you will be copying
+the template code into a new branch specifically for your code. To do this, run
+the command `git checkout -b *yourName*C1`, replacing "`*yourName*`" with your
+name. This command will create a new branch with the given name, and automatically 
+switch to it. Edits on this branch will not affect any other branches, giving you 
+your own working environment.
 
 #### Opening up your project folder in your IDE
-Now that you have the proper template downloaded onto your computer, all that 
+Now that you have properly set up your code template in your personal branch, all that 
 remains is to open it up in WPILib VSCode. First, open up WPILib VSCode (make
 sure this isn't normal VSCode, since it won't have the proper features necessary
 for robot software), and click File > Open Folder, and navigate to your project
-folder and select it. Now, your robot code template should be open in VSCode
+folder and select it. Now, your robot code template should be open in VSCode and
+you should be ready to start coding.
 
 ### Next steps
 Now that you've finished all of the setup and configuration, you can start
