@@ -16,12 +16,8 @@ changes in your code, upload code to the web, and allows us to manage our projec
 efficiently. Github is an online tool that allows us to store and share code, and 
 collaborate on our projects.
 
-If you already have experience with Git and Github and know what you are doing, the 
-rest of this document doesn't apply to you. You should clone this repository and read 
-the instructions on the branch correspoinding to the cert that you are trying to get.
- - [Robot SW 1](https://github.com/flamingchickens1540/RobotSoftwareTraining/tree/c1Template) 
- - [Robot SW 2](https://github.com/flamingchickens1540/RobotSoftwareTraining/tree/c2Template) 
-
+If you already have experience with Git and Github and know what you are doing, proceed
+to [this section](https://github.com/flamingchickens1540/RobotSoftwareTraining#creating-your-personal-working-branch).
 Otherwise, if you don't know how to use Git, proceed to the next section.
 
 #### Installing Git
