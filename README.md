@@ -47,73 +47,9 @@ you'll be able to get to later (your `Documents` folder is a great place!). Make
 sure that this <u>isn't</u> your `Downloads` folder, since you may accidentally 
 delete all your work when you clean your disk!
 
-### Configuring Git and Github
-Before you get started, you will have to register for a Github account and add
-some configurations to Git.
-
-#### Registering for Github
-If you haven't already registered a Github account, you will do so now. Simply
-go to the [Github homepage](https://github.com) and click the sign up button.
-Follow the instructions on the webpage in order to complete your registration.
-
-Once you've successfully registered a Github account, speak to a manager or
-Kevin, who will get you added to the 1540 Flaming Chickens organization on
-Github.
-
-#### Configuring your Git username and email
-To have your contributions to code be properly attributed, you will have to
-give Git a username and email. To do this, first open your terminal app. Then,
-enter the command `git config --global user.name *your username*` replacing
-"`*your username*`" with your username. Make sure that this username is either
-your real name or your Github username. 
-
-Next, to configure your email, enter the
-command `git config --global user.email *your email*` replacing "`*your email*`"
-with your email. This email should be the email that you used to register a
-Github account.
-
-#### Configuring your personal access tokens
-For security reasons, Github requires that you use special "Personal Access
-Tokens" when uploading code to a repository. To do this, you will need to
-generate your own.
-
-First, go to Github and click on your profile in the top right corner. In the
-popup, click on settings. Then, scroll down until you see "Developer Settings"
-in the bottom left corner and click on it. Then, click on "Personal access
-tokens" and then "Fine-grained tokens".
-
-To create a new token, click the "Generate new token" button. Github will prompt
-you for an expiration date for this token, so choose a date that seems
-reasonable, since you will have to regenerate this token when it expires.
-Generally, several months into the future is a good date to set the expiration.
-
-Then, in the "Repository access" section, select the option "All repositories",
-and in the permissions section, open the repository access tab and find the
-option called "Contents", and give it read and write access. No other
-permissions are necessary.
-
-Finally, click the "Generate token" button at the end of the page. This will
-bring you to a page that has your personal access token ready to be copied.
-> :warning: **Make sure that you save this access token somewhere that you can
-> find later, since you will need it later**
-
-#### Configuring Git to store your credentials
-Normally, when uploading code to a repository using Git, it will prompt you to
-enter your username and password (In this case this will be your personal access
-token). It's usually considered annoying to have to type in your username and
-access token every single time you want to upload code (If this isn't you, feel 
-free to skip this section), but luckily Git allows you to store your credentials 
-so that you will only have to enter them once.
-
-To do this, simply enter the command `git config --global credential.helper
-store` into your terminal. This will make it so the next time you try uploading
-code to a repository, you will be prompted for your username and access token,
-but only once. For all future actions, Git will have your credentials stored, so
-you will not be asked for a username or password.
-
 ### Getting started
-Now that you have set up your workspace and configured Git and Github correctly,
-you can finally move on to getting started with robot software! 
+Now that you have set up your workspace and Git correctly, you can now get
+started on robot software! 
 
 #### Cloning the repository
 First, you'll want to navigate to the folder that you created earlier in your file 
@@ -141,11 +77,6 @@ in order to have all your future commands be run in your project folder. Then,
 type `git checkout c1Template` to checkout the branch with the template code for
 a Robot SW 1 certification. Change "`c1Template`" to "`c2Template`" if you are
 working on a Robot SW 2.
-
-> :exclamation: Robot software (and many organizations around the world) use Git
-> and Github to manage their collaboration on code. We recommend that at some
-> point in the near future, you check out [this](https://www.w3schools.com/git/)
-> Git tutorial to learn how to use Git effectively.
 
 #### Opening up your project folder in your IDE
 Now that you have the proper template downloaded onto your computer, all that 
