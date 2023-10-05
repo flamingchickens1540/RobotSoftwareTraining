@@ -18,4 +18,10 @@ public final class Constants {
     public static final int INTAKE_MOTOR_2_ID = 1;
     public static final double INTAKE_SPEED = 0.1;
   }
+
+  public final class PivotConstants {
+    public static final double MAX_ANGLE = 45;
+    public static final int PIVOT_MOTOR_1_ID = 2;
+    public static final int PIVOT_MOTOR_2_ID = 3;
+  }
 }
