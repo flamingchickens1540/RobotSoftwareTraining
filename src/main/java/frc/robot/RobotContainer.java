@@ -7,6 +7,8 @@ package frc.robot;
 import frc.robot.commands.ExampleSubsystem.ExampleSubsystem;
 import frc.robot.commands.IntakeSubsystem.IntakeSubsystem;
 import frc.robot.commands.IntakeSubsystem.RunIntake;
+import frc.robot.commands.PivotSubsystem.PivotCommand;
+import frc.robot.commands.PivotSubsystem.PivotSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -20,6 +22,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final IntakeSubsystem m_IntakeSubsystem = new IntakeSubsystem();
+  private final PivotSubsystem m_PivotSubsystem = new PivotSubsystem();
 
   private final CommandXboxController controller = new CommandXboxController(0);
 
@@ -29,6 +32,8 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+    PivotCommand pivotCommand = new PivotCommand(m_PivotSubsystem, controller);
+    pivotCommand.schedule();
   }
 
   /**

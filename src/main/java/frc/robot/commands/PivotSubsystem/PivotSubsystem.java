@@ -16,4 +16,12 @@ public class PivotSubsystem extends SubsystemBase {
         motor1.set(0);
         motor2.set(0);
     }
+
+    public void runMotors(double speed) {
+        motor2.set(speed);
+    }
+
+    public double currentAngle() {
+        return 360*motor2.getEncoder().getPosition();
+    }
 }

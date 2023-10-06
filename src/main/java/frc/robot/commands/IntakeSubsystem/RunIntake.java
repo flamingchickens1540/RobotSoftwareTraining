@@ -1,6 +1,7 @@
 package frc.robot.commands.IntakeSubsystem;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 
 public class RunIntake extends CommandBase{
     public final IntakeSubsystem m_intake;
@@ -17,7 +18,7 @@ public class RunIntake extends CommandBase{
 
     @Override
     public boolean isFinished() {
-        return (m_intake.getVelocity() < 0.1);
+        return (m_intake.getVelocity() < Constants.IntakeConstants.INTAKE_SPEED);
     }
 
     @Override
