@@ -11,7 +11,7 @@ public class PivotSubsystem extends SubsystemBase {
     public final CANSparkMax motor2 = new CANSparkMax(Constants.PivotConstants.PIVOT_MOTOR_2_ID, MotorType.kBrushless);
 
     public PivotSubsystem() {
-        motor1.follow(motor2, false); // pls figure out if invert is right, do not hurt robot
+        motor1.follow(motor2, true); // pls figure out if invert is right, do not hurt robot
 
         motor1.set(0);
         motor2.set(0);
