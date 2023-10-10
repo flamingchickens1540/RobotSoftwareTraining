@@ -32,8 +32,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
-    PivotCommand pivotCommand = new PivotCommand(m_PivotSubsystem, controller);
-    pivotCommand.schedule();
+    m_PivotSubsystem.setDefaultCommand(new PivotCommand(m_PivotSubsystem, controller));
   }
 
   /**
