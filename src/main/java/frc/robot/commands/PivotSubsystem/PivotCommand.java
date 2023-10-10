@@ -10,9 +10,6 @@ public class PivotCommand extends CommandBase{
     private double input;
 
     private boolean isSufficientInput;
-    private boolean isPivotingForward;
-    private boolean isAtBackMax;
-    private boolean isAtFrontMax;
 
     public PivotCommand(PivotSubsystem subsystem, CommandXboxController controller) {
         m_PivotSubsystem = subsystem;
@@ -24,13 +21,9 @@ public class PivotCommand extends CommandBase{
     public void execute() {
         input = m_controller.getRightY();
         isSufficientInput = Math.abs(input) >= Constants.DEADZONE;
-        isPivotingForward = (input == Math.abs(input));
-        isAtBackMax = (m_PivotSubsystem.currentAngle() == -Constants.PivotConstants.MAX_ANGLE);
-        isAtFrontMax = (m_PivotSubsystem.currentAngle() == Constants.PivotConstants.MAX_ANGLE);
+        input = !isSufficientInput ? 0 : input;
 
-        if (isSufficientInput && ((isAtBackMax && isPivotingForward) || (isAtFrontMax && !isPivotingForward))) {
-            m_PivotSubsystem.runMotors(input);
-        }
+        m_PivotSubsystem.runMotors(0);
     }
 
     @Override
