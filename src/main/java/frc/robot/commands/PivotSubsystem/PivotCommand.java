@@ -21,7 +21,7 @@ public class PivotCommand extends CommandBase{
     public void execute() {
         input = m_controller.getRightY();
         isSufficientInput = Math.abs(input) >= Constants.DEADZONE;
-        input = !isSufficientInput ? 0 : input;
+        input = !isSufficientInput ? 0 : 0.1*input;
 
         m_PivotSubsystem.runMotors(input);
     }
