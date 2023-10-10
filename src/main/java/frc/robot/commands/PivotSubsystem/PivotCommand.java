@@ -23,7 +23,7 @@ public class PivotCommand extends CommandBase{
         isSufficientInput = Math.abs(input) >= Constants.DEADZONE;
         input = !isSufficientInput ? 0 : input;
 
-        m_PivotSubsystem.runMotors(0);
+        m_PivotSubsystem.runMotors(input);
     }
 
     @Override
