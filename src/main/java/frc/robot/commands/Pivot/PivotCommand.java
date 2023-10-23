@@ -3,21 +3,13 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands.Pivot;
-
-import frc.robot.subsystems.ExampleSubsystem;
-
-import com.ctre.phoenix.motorcontrol.ControlMode;
-
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /** An example command that uses an example subsystem. */
 public class PivotCommand extends CommandBase {
-  @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final PivotSubsystem pivotSubsystem;
   private final CommandXboxController controller;
-  private final boolean canContinue;
   
   /**
    * Creates a new ExampleCommand.
@@ -27,7 +19,6 @@ public class PivotCommand extends CommandBase {
   public PivotCommand(PivotSubsystem subsystem, CommandXboxController xbox) {
     pivotSubsystem = subsystem;
     controller = xbox;
-    canContinue = true;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -49,6 +40,6 @@ public class PivotCommand extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return canContinue;
+    return false;
   }
 }
