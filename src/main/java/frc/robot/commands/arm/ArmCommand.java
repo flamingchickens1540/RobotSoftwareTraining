@@ -27,7 +27,7 @@ public class ArmCommand extends CommandBase{
       // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        double deadZoneControlledValue = MathUtil.applyDeadband(copilotController.getLeftX(), 0.1);
+        double deadZoneControlledValue = MathUtil.applyDeadband(copilotController.getLeftY(), 0.1);
         m_armSubsystem.pivotArm(deadZoneControlledValue * 0.1);
     }
 
