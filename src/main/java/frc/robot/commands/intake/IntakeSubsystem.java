@@ -1,6 +1,6 @@
-package frc.robot.subsystems;
+package frc.robot.commands.intake;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.CANSparkMax;
 import frc.robot.Constants;
@@ -8,27 +8,21 @@ import frc.robot.Constants;
 public class IntakeSubsystem extends SubsystemBase{
     
     //fields 
-    CANSparkMax intakeA = new CANSparkMax(Constants.intakeMotorA, CANSparkMax.MotorType.kBrushless);
-    CANSparkMax intakeB = new CANSparkMax(Constants.intakeMotorB, CANSparkMax.MotorType.kBrushless);
+    private final CANSparkMax intakeA = new CANSparkMax(Constants.intakeConstants.intakeMotorA, CANSparkMax.MotorType.kBrushless);
+    private final CANSparkMax intakeB = new CANSparkMax(Constants.intakeConstants.intakeMotorB, CANSparkMax.MotorType.kBrushless);
 
   public IntakeSubsystem() {
-  intakeA.setInverted(false);
-  intakeB.setInverted(false);
+    intakeA.setInverted(false);
+    intakeB.setInverted(true);
+    intakeB.follow(intakeA);
   }
 
-  public void intakeRun(){
-    intakeA.set(Constants.motorSpeedPercentage);
-    intakeB.set(Constants.motorSpeedPercentage);
-  }
-
-  public void reverseIntakeRun(){
-    intakeA.set(-Constants.motorSpeedPercentage);
-    intakeB.set(-Constants.motorSpeedPercentage);
+  public void intakeRun(double speed){
+    intakeA.set(speed);
   }
 
   public void stopIntakeRun(){
     intakeA.set(0);
-    intakeB.set(0);
   }
   
   }
