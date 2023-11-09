@@ -3,6 +3,8 @@ package frc.robot.commands.intake;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMax.IdleMode;
+
 import frc.robot.Constants;
 
 public class IntakeSubsystem extends SubsystemBase{
@@ -12,9 +14,11 @@ public class IntakeSubsystem extends SubsystemBase{
     private final CANSparkMax intakeB = new CANSparkMax(Constants.intakeConstants.intakeMotorB, CANSparkMax.MotorType.kBrushless);
 
   public IntakeSubsystem() {
-    intakeA.setInverted(false);
-    intakeB.setInverted(true);
-    intakeB.follow(intakeA);
+    intakeA.setInverted(true);
+    // intakeB.setInverted(true);
+    intakeB.follow(intakeA, true);
+    intakeA.setIdleMode(IdleMode.kBrake);
+    intakeB.setIdleMode(IdleMode.kBrake);
   }
 
   public void intakeRun(double speed){
