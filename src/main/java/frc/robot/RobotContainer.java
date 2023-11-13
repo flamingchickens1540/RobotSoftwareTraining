@@ -32,8 +32,9 @@ public class RobotContainer {
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
-    arm.setDefaultCommand(new PivotCommand(arm, controller));
+
     configureBindings();
+    controller.leftStick().whileTrue(new PivotCommand(arm, controller));
   }
 
   /**
