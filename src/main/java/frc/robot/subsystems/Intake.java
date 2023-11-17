@@ -4,23 +4,16 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class ExampleSubsystem extends SubsystemBase {
-  /** Creates a new ExampleSubsystem. */
-  public ExampleSubsystem() {}
+public class Intake extends SubsystemBase {
+  public Intake() {}
 
-  /**
-   * Example command factory method.
-   *
-   * @return a command
-   */
+ 
   public CommandBase exampleMethodCommand() {
     // Inline construction of command goes here.
     // Subsystem::RunOnce implicitly requires `this` subsystem.
@@ -30,15 +23,12 @@ public class ExampleSubsystem extends SubsystemBase {
         });
   }
 
-  XboxController controller = new XboxController(0);
-  TalonFX pivot1 = new TalonFX(0);
-  TalonFX pivot2 = new TalonFX(0);
   CANSparkMax intake1 = new CANSparkMax(0, MotorType.kBrushless);
   CANSparkMax intake2 = new CANSparkMax(0, MotorType.kBrushless);
 
   public void intake() {
     intake1.set(0.5);
-
+    intake2.set(0.5);
   }
 
   /**
