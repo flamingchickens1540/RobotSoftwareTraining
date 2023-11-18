@@ -10,8 +10,7 @@ import frc.robot.commands.arm.Arm;
 import frc.robot.commands.arm.PivotCommand;
 import frc.robot.commands.intake.Intake;
 import frc.robot.commands.intake.IntakeCommand;
-
-
+import frc.robot.commands.intake.OuttakeCommand;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -34,7 +33,7 @@ public class RobotContainer {
     // Configure the trigger bindings
 
     configureBindings();
-    controller.leftStick().whileTrue(new PivotCommand(arm, controller));
+    arm.setDefaultCommand(new PivotCommand(arm, controller));
   }
 
   /**
@@ -54,6 +53,7 @@ public class RobotContainer {
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
     controller.a().whileTrue(new IntakeCommand(intake));
+    controller.b().whileTrue(new OuttakeCommand(intake));
 
   }
 

@@ -10,18 +10,21 @@ public class IntakeCommand extends CommandBase{
 
   public IntakeCommand(Intake intake) {
     this.intake = intake;
+    addRequirements(intake);
   }
 
   @Override
   public void initialize() {
     intake.setSpeed(IntakeConstants.intakeSpeed);
   }
-
+  
+  @Override
   public boolean isFinished() {
     return intake.getSpeed() == 0;
 
   }
 
+  @Override
   public void end(boolean interrupted) {
     intake.stop();
   }

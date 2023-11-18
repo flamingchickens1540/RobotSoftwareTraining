@@ -15,12 +15,18 @@ package frc.robot;
 public final class Constants {
   public static class ArmConstants {
     public static final int kDriverControllerPort = 0;
+    public static final int pivotMotor1_ID = 11;
+    public static final int pivotMotor2_ID = 10;
+
+
+    public static final int pivotForwardLimit = 139000;
+    public static final int pivotReverseLimit = -134500;
   }
 
   public static class IntakeConstants {
 
-    public static final int motor1_ID = 15;
-    public static final int motor2_ID = 14;
+    public static final int intakeMotor1_ID = 15;
+    public static final int intakeMotor2_ID = 14;
 
     public static final double intakeSpeed = 0.2;
     public static final double outtakeSpeed = -0.2;

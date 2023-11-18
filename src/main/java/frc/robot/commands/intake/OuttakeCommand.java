@@ -10,6 +10,7 @@ public class OuttakeCommand extends CommandBase{
 
   public OuttakeCommand(Intake intake) {
     this.intake = intake;
+    addRequirements(intake);
   }
 
   @Override
@@ -17,11 +18,13 @@ public class OuttakeCommand extends CommandBase{
     intake.setSpeed(IntakeConstants.outtakeSpeed);
   }
 
+  @Override
   public boolean isFinished() {
     return intake.getSpeed() == 0;
 
   }
-
+  
+  @Override
   public void end(boolean interrupted) {
     intake.stop();
   }

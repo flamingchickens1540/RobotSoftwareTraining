@@ -12,20 +12,27 @@ import com.ctre.phoenix.motorcontrol.StatorCurrentLimitConfiguration;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.ArmConstants;
 
 public class Arm extends SubsystemBase {
   private final TalonFX pivotMotor1 = new TalonFX(11);
   private final TalonFX pivotMotor2 = new TalonFX(10);
 
 
-  /** Creates a new     ExampleSubsystem. */
+  /** Creates a new Arm subsystem. */
   public Arm() {
-
+    pivotMotor1.configStatorCurrentLimit(new StatorCurrentLimitConfiguration(true, 60, 60, 0));
+    pivotMotor2.configStatorCurrentLimit(new StatorCurrentLimitConfiguration(true, 60, 60, 0));
     pivotMotor2.setInverted(true);
     pivotMotor2.follow(pivotMotor1);
 
     pivotMotor1.setNeutralMode(NeutralMode.Brake);
     pivotMotor2.setNeutralMode(NeutralMode.Brake);
+    pivotMotor1.setInverted(false);
+    pivotMotor1.configForwardSoftLimitThreshold(ArmConstants.pivotForwardLimit);
+    pivotMotor1.configForwardSoftLimitEnable(true);
+    pivotMotor1.configReverseSoftLimitThreshold(ArmConstants.pivotReverseLimit);
+    pivotMotor1.configReverseSoftLimitEnable(true);
   }
 
 

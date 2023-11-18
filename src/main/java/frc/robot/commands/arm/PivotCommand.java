@@ -11,16 +11,24 @@ public class PivotCommand extends CommandBase{
   public PivotCommand(Arm arm, CommandXboxController controller) {
     this.arm = arm;
     this.controller = controller;
+    addRequirements(arm);
   }
 
 
 
+  @Override
   public void execute() {
     double input = controller.getRightY();
     if (Math.abs(input) > 0.1) {
       arm.setSpeed(input * 0.1);
+    } else {
+      arm.setSpeed(0);
     }
   }
 
-
+  
+  @Override
+  public void end(boolean interrupted) {
+    arm.setSpeed(0);
+  }
 }
