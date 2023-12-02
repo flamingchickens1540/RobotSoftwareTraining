@@ -7,6 +7,7 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.intakeCommand;
 import frc.robot.subsystems.Intake;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -23,6 +24,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final Intake m_exampleSubsystem = new Intake();
 
+  
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
@@ -33,7 +35,7 @@ public class RobotContainer {
     configureBindings();
   }
 
-  XboxController controller = new XboxController(0);
+  CommandXboxController controller = new CommandXboxController(0);
 
   /**
    * Use this method to define your trigger->command mappings. Triggers can be created via the
@@ -52,6 +54,7 @@ public class RobotContainer {
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
     m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
+    controller.x().whileTrue(new intakeCommand(m_exampleSubsystem));
   }
 
   /**

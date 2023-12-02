@@ -23,12 +23,12 @@ public class Intake extends SubsystemBase {
         });
   }
 
-  CANSparkMax intake1 = new CANSparkMax(0, MotorType.kBrushless);
-  CANSparkMax intake2 = new CANSparkMax(0, MotorType.kBrushless);
+ CANSparkMax intake1 = new CANSparkMax(0, MotorType.kBrushless);
+ CANSparkMax intake2 = new CANSparkMax(0, MotorType.kBrushless);
 
-  public void intake() {
-    intake1.set(0.5);
-    intake2.set(0.5);
+  public void setSpeed(double speed) {
+    intake1.set(speed);
+    intake2.set(speed);
   }
 
   /**
