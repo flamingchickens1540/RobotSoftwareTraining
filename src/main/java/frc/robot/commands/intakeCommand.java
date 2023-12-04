@@ -3,9 +3,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Intake;
 
-public class intakeCommand extends CommandBase{
+public class IntakeCommand extends CommandBase{
     private Intake IntakeSubsystem;
-    public intakeCommand(Intake IntakeSubsystem) {
+    public IntakeCommand(Intake IntakeSubsystem) {
         this.IntakeSubsystem = IntakeSubsystem;
     }
     public void initialize() {

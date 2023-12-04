@@ -7,8 +7,10 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
-import frc.robot.commands.intakeCommand;
+import frc.robot.commands.PivotCommand;
+import frc.robot.commands.IntakeCommand;
 import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Pivot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -22,17 +24,18 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final Intake m_exampleSubsystem = new Intake();
+  private final Intake intake = new Intake();
+  private final Pivot pivot = new Pivot();
 
   
   // Replace with CommandPS4Controller or CommandJoystick if needed
-  private final CommandXboxController m_driverController =
-      new CommandXboxController(OperatorConstants.kDriverControllerPort);
+  private final CommandXboxController m_driverController = new CommandXboxController(OperatorConstants.kDriverControllerPort);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+    pivot.setDefaultCommand(new PivotCommand(pivot));
   }
 
   CommandXboxController controller = new CommandXboxController(0);
@@ -48,13 +51,13 @@ public class RobotContainer {
    */
   private void configureBindings() {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
-    new Trigger(m_exampleSubsystem::exampleCondition)
-        .onTrue(new ExampleCommand(m_exampleSubsystem));
+    new Trigger(intake::exampleCondition)
+        .onTrue(new ExampleCommand(intake));
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
-    controller.x().whileTrue(new intakeCommand(m_exampleSubsystem));
+    m_driverController.b().whileTrue(intake.exampleMethodCommand());
+    controller.x().whileTrue(new IntakeCommand(intake));
   }
 
   /**
@@ -64,6 +67,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Autos.exampleAuto(m_exampleSubsystem);
+    return Autos.exampleAuto(intake);
   }
 }
