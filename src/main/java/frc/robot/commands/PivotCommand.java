@@ -6,17 +6,23 @@ import frc.robot.subsystems.Pivot;
 
 public class PivotCommand extends CommandBase {
     private Pivot pivotSubsystem;
+    private CommandXboxController controller;
 
-    public PivotCommand(Pivot pivotSubsytem) {
+    public PivotCommand(Pivot pivotSubsytem, CommandXboxController m_driverController) {
         this.pivotSubsystem = pivotSubsytem;
+        this.controller = m_driverController;
+        addRequirements(pivotSubsytem);
     }
-
-    CommandXboxController controller;
-
+    @Override
     public void initialize() {
     }
 
+    @Override
     public void execute() {
-        pivotSubsystem.pivot(controller.getRightY());
+        pivotSubsystem.pivot(controller.getRightY() * 0.1);
+    }
+    @Override
+    public void end(boolean interrupted) {
+        pivotSubsystem.pivot(0);
     }
 }
