@@ -5,11 +5,11 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class IntakeSub extends SubsystemBase {
-    public CANSparkMax motor1 = new CANSparkMax(0, MotorType.kBrushless);
-    public CANSparkMax motor2 = new CANSparkMax(0, MotorType.kBrushless);
+public class Intake extends SubsystemBase {
+    private CANSparkMax motor1 = new CANSparkMax(14, MotorType.kBrushless);
+    private CANSparkMax motor2 = new CANSparkMax(15, MotorType.kBrushless);
 
-    public IntakeSub() {
+    public Intake() {
         motor2.setInverted(true);
         motor1.setInverted(false);
         motor2.follow(motor1);

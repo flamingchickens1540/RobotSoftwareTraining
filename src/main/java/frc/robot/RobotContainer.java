@@ -6,11 +6,10 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Arm;
 import frc.robot.commands.ArmCommand;
 import frc.robot.commands.IntakeCommand;
-import frc.robot.commands.IntakeSub;
+import frc.robot.commands.Intake;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -23,7 +22,7 @@ import frc.robot.commands.IntakeSub;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final IntakeSub Intakesub = new IntakeSub();
+  private final Intake Intakesub = new Intake();
   private final Arm arm = new Arm();
   // Replace with CommandPS4Controller or CommandJoystick if needed
 
@@ -46,8 +45,8 @@ public class RobotContainer {
 
     controller.a().whileTrue(new IntakeCommand(Intakesub, 0.25));
     controller.b().whileTrue(new IntakeCommand(Intakesub, -0.25));
-    controller.x().whileTrue(new ArmCommand(arm, controller.getLeftY()));
-    controller.y().whileTrue(new ArmCommand(arm, controller.getLeftY()));
+    arm.setDefaultCommand(new ArmCommand(arm, controller));
+
 
 
   }
