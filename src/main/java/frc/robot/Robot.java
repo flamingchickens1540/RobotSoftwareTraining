@@ -51,7 +51,7 @@ public class Robot extends TimedRobot {
     myTalonTopLeft.set(ControlMode.PercentOutput, XboxController1.getLeftY() * 0.5);
     myTalonBottomLeft.set(ControlMode.PercentOutput, XboxController1.getLeftY() * 0.5);
     myTalonTopRight.set(ControlMode.PercentOutput, XboxController1.getRightY() * 0.5);
-    myTalonBottomRight.set(ControlMode.PercentOutput, XboxController1.getRightY() * 0.5);
+    myTalonBottomRight.set(ControlMode.PercentOutput, XboxController1.getRightY() * 0.5);                                                                                                     
     
     
     
